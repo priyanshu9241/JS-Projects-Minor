@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>To-Do List</title>
+  <style>
+    .list {
+      min-width: min-content;
+      cursor: pointer;
+    }
+    
+    .list-item:hover {
+      color: red;
+      text-decoration: line-through;
+    }
+  </style>
+
+</head>
+
+<body>
+  <form id="new-item-form">
+    <label for="item-input">NEW ITEM</label>
+    <input type="text" name="" id="item-input">
+    <button type="submit">ADD ITEM</button>
+  </form>
+
+  <div id="list"></div>
+
+
+  <script>
+    const form = document.querySelector('#new-item-form')
+    const list = document.querySelector('#list')
+    const input = document.querySelector('#item-input');
+
+    form.addEventListener("submit", event => {
+      event.preventDefault()
+      //create item
+      const item = document.createElement("div");
+      item.innerText = input.value;
+      item.classList.add("list-item")
+      //add item to list
+      list.appendChild(item)
+      //clear text in input
+      input.value=""
+      //remove list item when clicked
+      item.addEventListener("click",()=>{
+
+        item.remove()
+      })
+    })
+  </script>
+</body>
+
+</html>
