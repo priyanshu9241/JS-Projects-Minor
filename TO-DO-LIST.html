@@ -10,7 +10,7 @@
       min-width: min-content;
       cursor: pointer;
     }
-    
+
     .list-item:hover {
       color: red;
       text-decoration: line-through;
@@ -43,9 +43,9 @@
       //add item to list
       list.appendChild(item)
       //clear text in input
-      input.value=""
+      input.value = ""
       //remove list item when clicked
-      item.addEventListener("click",()=>{
+      item.addEventListener("click", () => {
 
         item.remove()
       })
